@@ -30,17 +30,15 @@ if [ ! -e ngrok.service ]; then
     cd homeip
 fi
 cp ngrok.service /lib/systemd/system/
-cp socks5.service /lib/systemd/system/
 
 mkdir -p /opt/ngrok
 mkdir -p /opt/socks5
 
 cp ngrok.yml /opt/ngrok
-cp socks5 /opt/socks5
 
 sed -i "s/<add_your_token_here>/$1/g" /opt/ngrok/ngrok.yml
 sed -i "s/<region>/$2/g" /opt/ngrok/ngrok.yml
-sed -i "s/<socks5_port>/$3/g" /opt/ngrok/ngrok.yml
+sed -i "s/<PROXY_PORT>/$3/g" /opt/ngrok/ngrok.yml
 
 sed -i "s/<PROXY_USER>/$4/g" /lib/systemd/system/socks5.service
 sed -i "s/<PROXY_PASSWORD>/$5/g" /lib/systemd/system/socks5.service
@@ -52,11 +50,5 @@ unzip ngrok-stable-linux-amd64.zip
 rm ngrok-stable-linux-amd64.zip
 chmod +x ngrok
 
-cd /opt/socks5
-chmod +x socks5
-
 systemctl enable ngrok.service
 systemctl start ngrok.service
-
-systemctl enable socks5.service
-systemctl start socks5.service
