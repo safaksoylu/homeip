@@ -8,6 +8,8 @@ fi
 systemctl stop ngrok.service
 systemctl disable ngrok.service
 
+systemctl stop socks5.service
+systemctl disable socks5.service
 
 rm /lib/systemd/system/ngrok.service
 rm /lib/systemd/system/socks5.service
