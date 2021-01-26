@@ -21,7 +21,7 @@ if (( $EUID != 0 )); then
 fi
 
 if [ -z "$1" ]; then
-    echo "./install.sh <your_authtoken> <region> <socks5_port> <PROXY_USER> <PROXY_PASSWORD> <PROXY_PORT>"
+    echo "./install.sh <your_authtoken> <region> <socks5_port> <PROXY_USER> <PROXY_PASSWORD>"
     exit 1
 fi
 
@@ -39,11 +39,11 @@ cp ngrok.yml /opt/ngrok
 
 sed -i "s/<add_your_token_here>/$1/g" /opt/ngrok/ngrok.yml
 sed -i "s/<region>/$2/g" /opt/ngrok/ngrok.yml
-sed -i "s/<PROXY_PORT>/$3/g" /opt/ngrok/ngrok.yml
+sed -i "s/<socks5_port>/$3/g" /opt/ngrok/ngrok.yml
 
 sed -i "s/<PROXY_USER>/$4/g" /lib/systemd/system/socks5.service
 sed -i "s/<PROXY_PASSWORD>/$5/g" /lib/systemd/system/socks5.service
-sed -i "s/<PROXY_PORT>/$6/g" /lib/systemd/system/socks5.service
+sed -i "s/<PROXY_PORT>/$3/g" /lib/systemd/system/socks5.service
 
 cd /opt/ngrok
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
