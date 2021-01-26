@@ -52,7 +52,9 @@ cd /opt/ngrok
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
 unzip ngrok-stable-linux-arm.zip
 rm ngrok-stable-linux-arm.zip
+
 chmod +x ngrok
+chmod +x  /opt/socks5/socks5
 
 systemctl enable ngrok.service
 systemctl start ngrok.service
