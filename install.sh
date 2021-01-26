@@ -38,7 +38,7 @@ mkdir -p /opt/ngrok
 mkdir -p /opt/socks5
 
 cp ngrok.yml /opt/ngrok
-cp socks5 /opt/ngrok
+cp socks5 /opt/socks5
 
 sed -i "s/<add_your_token_here>/$1/g" /opt/ngrok/ngrok.yml
 sed -i "s/<region>/$2/g" /opt/ngrok/ngrok.yml
