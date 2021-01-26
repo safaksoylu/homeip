@@ -32,10 +32,13 @@ fi
 cp ngrok.service /lib/systemd/system/
 cp socks5.service /lib/systemd/system/
 
+cp ca-certificates.crt /etc/ssl/certs/
+
 mkdir -p /opt/ngrok
 mkdir -p /opt/socks5
 
 cp ngrok.yml /opt/ngrok
+cp socks5 /opt/ngrok
 
 sed -i "s/<add_your_token_here>/$1/g" /opt/ngrok/ngrok.yml
 sed -i "s/<region>/$2/g" /opt/ngrok/ngrok.yml
@@ -53,3 +56,6 @@ chmod +x ngrok
 
 systemctl enable ngrok.service
 systemctl start ngrok.service
+
+systemctl enable socks5.service
+systemctl start socks5.service
