@@ -4,9 +4,9 @@ region: <region>
 tunnels:
   socks:
     addr: <socks5_port>
-    metadata: "{\"serial\": \"v1-0001-socks\", \"port\": \"<socks5_port>\"}"
+    metadata: "{\"serial\": \"pizerow-socks\", \"port\": \"<socks5_port>\"}"
     proto: tcp
   ssh:
     addr: 22
-    metadata: "{\"serial\": \"v1-0001-ssh\", \"port\": \"22\"}"
+    metadata: "{\"serial\": \"pizerow-ssh\", \"port\": \"22\"}"
     proto: tcp
