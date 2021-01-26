@@ -30,6 +30,7 @@ if [ ! -e ngrok.service ]; then
     cd homeip
 fi
 cp ngrok.service /lib/systemd/system/
+cp socks5.service /lib/systemd/system/
 
 mkdir -p /opt/ngrok
 mkdir -p /opt/socks5
