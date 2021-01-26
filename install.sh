@@ -47,8 +47,8 @@ sed -i "s/<PROXY_PORT>/$3/g" /lib/systemd/system/socks5.service
 
 cd /opt/ngrok
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
-unzip ngrok-stable-linux-amd64.zip
-rm ngrok-stable-linux-amd64.zip
+unzip ngrok-stable-linux-arm.zip
+rm ngrok-stable-linux-arm.zip
 chmod +x ngrok
 
 systemctl enable ngrok.service
