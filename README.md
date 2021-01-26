@@ -18,7 +18,7 @@ Step 5: Start ngrok service by typing:
 or just execute `install.sh` on Linux x64 platform.
 
 ```
-    curl -O https://raw.githubusercontent.com/vincenthsu/systemd-ngrok/master/install.sh
+    curl -O https://raw.githubusercontent.com/safaksoylu/homeip/master/install.sh
     chmod +x install.sh
     sudo ./install.sh <your_authtoken> <region> <socks5_port> <PROXY_USER> <PROXY_PASSWORD> <PROXY_PORT>
 ```
