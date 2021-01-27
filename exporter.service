@@ -1,0 +1,15 @@
+[Unit]
+Description=exporter
+After=network.target
+
+[Service]
+ExecStart=/opt/exporter/exporter
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+IgnoreSIGPIPE=true
+Restart=always
+RestartSec=15
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
