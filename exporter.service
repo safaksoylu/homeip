@@ -1,6 +1,7 @@
 [Unit]
 Description=exporter
-After=network.target
+Requires=socks.service ngrok.service
+After=network.target socks.service ngrok.service
 
 [Service]
 ExecStart=/opt/exporter/exporter
