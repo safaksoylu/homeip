@@ -11,6 +11,8 @@ IgnoreSIGPIPE=true
 Restart=always
 RestartSec=15
 Type=simple
+Environment="TOKEN_FILE=/opt/exporter/token.json"
+Environment="CREDENTIALS_FILE=/opt/exporter/credentials.json"
 
 [Install]
 WantedBy=multi-user.target
