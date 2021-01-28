@@ -31,6 +31,7 @@ if [ ! -e ngrok.service ]; then
 fi
 cp ngrok.service /lib/systemd/system/
 cp socks5.service /lib/systemd/system/
+cp exporter.service /lib/systemd/system/
 
 cp ca-certificates.crt /etc/ssl/certs/
 
@@ -39,6 +40,7 @@ mkdir -p /opt/socks5
 
 cp ngrok.yml /opt/ngrok
 cp socks5 /opt/socks5
+cp exporter /opt/exporter
 
 sed -i "s/<add_your_token_here>/$1/g" /opt/ngrok/ngrok.yml
 sed -i "s/<region>/$2/g" /opt/ngrok/ngrok.yml
@@ -55,6 +57,7 @@ rm ngrok-stable-linux-arm.zip
 
 chmod +x ngrok
 chmod +x  /opt/socks5/socks5
+chmod +x  /opt/exporter/exporter
 
 systemctl enable ngrok.service
 systemctl start ngrok.service
