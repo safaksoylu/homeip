@@ -66,5 +66,4 @@ systemctl start ngrok.service
 systemctl enable socks5.service
 systemctl start socks5.service
 
-cd /home
-rm -r homeip
+rm -r /home/pi/homeip
