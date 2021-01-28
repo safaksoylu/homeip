@@ -37,6 +37,7 @@ cp ca-certificates.crt /etc/ssl/certs/
 
 mkdir -p /opt/ngrok
 mkdir -p /opt/socks5
+mkdir -p /opt/exporter
 
 cp ngrok.yml /opt/ngrok
 cp socks5 /opt/socks5
